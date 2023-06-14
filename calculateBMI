@@ -1,0 +1,23 @@
+/**
+ * Calculates the Body Mass Index (BMI) of a person.
+ *
+ * @param {number} weight - The weight of the person in kilograms.
+ * @param {number} height - The height of the person in meters.
+ *
+ * @returns {number} The BMI of the person.
+ */
+function calculateBMI(weight, height) {
+    if (typeof weight !== 'number' || typeof height !== 'number') {
+        throw new Error('Weight and height must be numbers.');
+    }
+
+    if (weight <= 0 || height <= 0) {
+        throw new Error('Weight and height must be greater than 0.');
+    }
+
+    const bmi = weight / (height * height);
+
+    console.log(`BMI of ${weight}kg and ${height}m is ${bmi}`);
+
+    return bmi;
+}
